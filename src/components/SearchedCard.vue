@@ -6,7 +6,7 @@
         <li>titolo: {{item.title}}</li>
         <li>titolo originale: {{item.originalTitle}}</li>
         <li>lingua: {{item.originalLanguage}}</li>
-        <li>popolarità {{item.popularity}}</li>
+        <li><span v-for="(star, i) in item.popularity" :key="i"><i class="fa-solid fa-star"></i></span></li>
     </ul>
 
   </section>
@@ -18,7 +18,7 @@ export default {
     props:{
         searchedItems: Array,
         placeholder: String,
-    }
+    },
 }
 </script>
 

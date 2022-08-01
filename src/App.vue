@@ -43,7 +43,7 @@ export default {
           const originalTitle = movie.original_title
           const originalLanguage = movie.original_language
           const id = movie.id
-          const popularity = movie.vote_average
+          const popularity = Math.ceil(movie.vote_average / 2)
           movie = {poster, title, originalTitle, originalLanguage, popularity, id}
           this.searchedMovies.push(movie)
         })})},
@@ -59,7 +59,7 @@ export default {
           const originalTitle = serie.original_name
           const originalLanguage = serie.original_language
           const id = serie.id
-          const popularity = serie.vote_average
+          const popularity = Math.ceil(serie.vote_average / 2)
           serie = {poster, title, originalTitle, originalLanguage, popularity, id}
           this.searchedTvSeries.push(serie)
       })})}
