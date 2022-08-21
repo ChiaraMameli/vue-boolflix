@@ -15,7 +15,7 @@ export default {
   name: 'App',
   components: {
     SearchBar,
-    SearchedCard
+    SearchedCard,
 },
  data(){
       return {
@@ -71,6 +71,8 @@ export default {
 <style lang="scss">
 *{
   box-sizing: border-box;
+  margin: 0;
+  border: 0;
 };
 
 body {
