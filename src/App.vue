@@ -38,7 +38,7 @@ export default {
       axios.get(`https://api.themoviedb.org/3/search/movie?api_key=2acda1a8a6a5a953521ce22c6319420c&query=${this.query}`).then((res) => {
         const movies = res.data.results;
         movies.forEach(movie => {
-          const poster = `https://image.tmdb.org/t/p/w342${movie.poster_path}`
+          const poster = `https://image.tmdb.org/t/p/w185${movie.poster_path}`
           const title = movie.title
           const originalTitle = movie.original_title
           const originalLanguage = movie.original_language
@@ -54,7 +54,7 @@ export default {
         const series = res.data.results;
         console.log(series)
         series.forEach(serie => {
-          const poster = `https://image.tmdb.org/t/p/w342${serie.poster_path}`
+          const poster = `https://image.tmdb.org/t/p/w185${serie.poster_path}`
           const title = serie.name
           const originalTitle = serie.original_name
           const originalLanguage = serie.original_language
@@ -69,4 +69,7 @@ export default {
 </script>
 
 <style lang="scss">
+*{
+  box-sizing: border-box;
+}
 </style> =
