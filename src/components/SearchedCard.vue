@@ -14,8 +14,8 @@
                             <img v-if="flags.includes(item.originalLanguage)" :src="require(`../assets/img/${item.originalLanguage}.png`)" :alt="item.originalLanguage">
                             <span v-else>Lingua: {{item.originalLanguage}}</span>
                         </li>
-                            
                         <li>Voto: <span v-for="(star, i) in item.popularity" :key="i"><i class="fa-solid fa-star"></i></span></li>
+                        <li>{{item.overview}}</li>
                     </ul>
                 </div>
             </li>
