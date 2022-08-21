@@ -4,8 +4,9 @@
             <img src="../assets/img/logo.png" alt="">
         </div>
         <div>
-            <input type="text" v-model="query">
-            <button @click="getItem">cerca</button>
+            <label class="search" for="search-item">
+                <input id="search-item" type="text" v-model="query" @keyup.enter="getItem">
+            </label>
         </div>
     </header>
 </template>
@@ -38,5 +39,6 @@ header{
         cursor: pointer;
     }
 }
+
 
 </style>

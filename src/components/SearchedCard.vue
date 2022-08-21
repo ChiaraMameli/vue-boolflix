@@ -46,10 +46,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
+h2{
+    padding: 15px;
+}
 #section-layout {
     display: flex;
     flex-wrap: wrap;
-
+    
     ul{
         list-style-type: none;
         padding: 0;

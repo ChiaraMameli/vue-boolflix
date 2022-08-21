@@ -90,8 +90,8 @@ export default {
         console.log(popularMovies)
         popularMovies.forEach(popularMovie => {
           const poster = `https://image.tmdb.org/t/p/w185${popularMovie.poster_path}`
-          const title = popularMovie.name
-          const originalTitle = popularMovie.original_name
+          const title = popularMovie.title
+          const originalTitle = popularMovie.original_title
           const originalLanguage = popularMovie.original_language
           const id = popularMovie.id
           const popularity = Math.ceil(popularMovie.vote_average / 2)
