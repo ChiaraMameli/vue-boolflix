@@ -8,14 +8,14 @@
             <li>
                 <div class="hover-section">
                     <ul>
-                        <li>Titolo: {{item.title}}</li>
-                        <li>Titolo originale: {{item.originalTitle}}</li>
+                        <li><strong>Title:</strong> {{item.title}}</li>
+                        <li><strong>Original title:</strong> {{item.originalTitle}}</li>
                         <li>
                             <img v-if="flags.includes(item.originalLanguage)" :src="require(`../assets/img/${item.originalLanguage}.png`)" :alt="item.originalLanguage">
-                            <span v-else>Lingua: {{item.originalLanguage}}</span>
+                            <span v-else><strong>Language:</strong> {{item.originalLanguage}}</span>
                         </li>
-                        <li>Voto: <span v-for="(star, i) in item.popularity" :key="i"><i class="fa-solid fa-star"></i></span></li>
-                        <li>{{item.overview}}</li>
+                        <li><strong>Rating:</strong> <span v-for="(star, i) in item.popularity" :key="i"><i class="fa-solid fa-star"></i></span></li>
+                        <li><strong>Storyline:</strong> {{item.overview}}</li>
                     </ul>
                 </div>
             </li>
@@ -86,11 +86,27 @@ export default {
     width: 200px;
     height: 300px;
 
+    padding: 10px;
+    overflow-y: auto;
+
     visibility: hidden;
 
     img{
         width: 30px;
     }
+
+    li{
+        padding-bottom: 10px;
+    }
+
+    .fa-star{
+        color: yellow;
+    }
 }
+
+    ::-webkit-scrollbar {
+    width: 1px;
+    }
+
 
 </style>
