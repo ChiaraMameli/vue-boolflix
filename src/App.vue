@@ -1,8 +1,8 @@
 <template>
 <div>
   <SearchBar @search-movie="getData"/>
-  <SearchedCard placeholder="Movies" :searchedItems="searchedMovies" v-if="searchedMovies.length > 0"/>
-  <SearchedCard placeholder="TV Series" :searchedItems="searchedTvSeries" v-if="searchedTvSeries.length > 0"/>
+  <SearchedCard placeholder="Movies:" :searchedItems="searchedMovies" v-if="searchedMovies.length > 0"/>
+  <SearchedCard placeholder="TV Series:" :searchedItems="searchedTvSeries" v-if="searchedTvSeries.length > 0"/>
 </div>
 </template>
 
@@ -71,5 +71,11 @@ export default {
 <style lang="scss">
 *{
   box-sizing: border-box;
+};
+
+body {
+  background-color: #141414;
+  color: #fff;
 }
+
 </style> =
