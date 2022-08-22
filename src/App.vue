@@ -84,21 +84,7 @@ export default {
         })})},
       },
       mounted(){
-        this.mostPopularMovies = [];
-        axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=2acda1a8a6a5a953521ce22c6319420c&query=apy_key`).then((res) => {
-        const popularMovies = res.data.results;
-        console.log(popularMovies)
-        popularMovies.forEach(popularMovie => {
-          const poster = `https://image.tmdb.org/t/p/w185${popularMovie.poster_path}`
-          const title = popularMovie.title
-          const originalTitle = popularMovie.original_title
-          const originalLanguage = popularMovie.original_language
-          const id = popularMovie.id
-          const popularity = Math.ceil(popularMovie.vote_average / 2)
-          const overview = popularMovie.overview
-          popularMovie = {poster, title, originalTitle, originalLanguage, popularity, id, overview}
-          this.mostPopularMovies.push(popularMovie)
-        })})
+        this.getPopularMovies()
       }
   }
 

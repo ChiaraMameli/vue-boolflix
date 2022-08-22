@@ -14,8 +14,8 @@
                             <img v-if="flags.includes(item.originalLanguage)" :src="require(`../assets/img/${item.originalLanguage}.png`)" :alt="item.originalLanguage">
                             <span v-else><strong>Language:</strong> {{item.originalLanguage}}</span>
                         </li>
-                        <li><strong>Rating:</strong> <span v-for="(star, i) in item.popularity" :key="i"><i class="fa-solid fa-star"></i></span></li>
-                        <li><strong>Storyline:</strong> {{item.overview}}</li>
+                        <li v-if="item.popularity"><strong>Rating:</strong> <span v-for="n in 5" :key="n"><i class="fa-star" :class="n >= item.popularity ? 'fa-regular' : 'fa-solid'"></i></span></li>
+                        <li v-if="item.overview"><strong>Storyline:</strong> {{item.overview}}</li>
                     </ul>
                 </div>
             </li>
@@ -25,7 +25,6 @@
 </template>
 
 <script>
-
 export default {
     name: 'SearchedCard',
     props:{
@@ -36,11 +35,6 @@ export default {
         return{
             flags: ['it', 'en'],
         } 
-    },
-    methods: {
-        toNext(){
-            
-        }
     }
 }
 </script>
